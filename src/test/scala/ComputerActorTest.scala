@@ -12,7 +12,7 @@ with WordSpecLike with Matchers {
   val firstActorRef = TestActorRef(new ComputerActor(testActor))
 
   "Computer Actor" should {
-    "add 1 to received data" in {
+    "add 1 to data on calculations" in {
       within(500 millis) {
         firstActorRef ! doCalculations(1)
         expectMsg(2)
